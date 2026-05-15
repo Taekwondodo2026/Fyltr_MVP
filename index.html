@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-900 pb-12 antialiased" x-data="{
-    minScore: 70,
+    minScore: 50,
     showImages: true,
     useNeutralTitles: true,
     favorites: [],
@@ -54,6 +54,104 @@
             image_url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
             source_url: 'https://www.tagesschau.de',
             score: 67
+        },
+        {
+            id: '4',
+            original_title: 'Opferzahl nach russischem Großangriff auf Kyjiw gestiegen: Mindestens 24 Tote und schwere Zerstörungen',
+            neutral_title: 'Schwerer Luftangriff auf Kyjiw fordert 24 Todesopfer und beschädigt kritische Infrastruktur',
+            category: 'Ausland',
+            summary: [
+                'Bei einem der schwersten koordinierten Raketen- und Drohnenangriffe der letzten Monate wurden in der ukrainischen Hauptstadt 24 Menschen getötet.',
+                'Der Angriff zielte primär auf die Energie- und Wärmeversorgung der Stadt ab, was zu regionalen Stromausfällen führte.',
+                'Trotz internationaler Vermittlungsversuche für kurzzeitige Waffenruhen signalisiert der Angriff eine Fortführung der intensiven Luftschläge.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1599422315622-be16c353f06c?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 73
+        },
+        {
+            id: '5',
+            original_title: 'Klare Botschaft an alle Mörder: Israelisches Militär meldet Tötung von Hamas-Führer al-Haddad im Gazastreifen',
+            neutral_title: 'Israelisches Militär vermeldet Tötung eines hochrangigen Hamas-Anführers im Gazastreifen',
+            category: 'Ausland',
+            summary: [
+                'Das israelische Militär hat den hochrangigen Hamas-Kommandeur Iss al-Din al-Haddad bei einer gezielten Militäroperation getötet.',
+                'Al-Haddad wurde von israelischer Seite als einer der strategischen Planer hinter den Angriffen vom 7. Oktober eingestuft.',
+                'Experten erwarten, dass der Vorfall unmittelbare Auswirkungen auf die festgefahrenen Verhandlungen über eine Waffenruhe haben wird.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1534080391025-a7f0e6d87e17?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 70
+        },
+        {
+            id: '6',
+            original_title: 'Der Kampf um den Achtstundentag hat begonnen: Arbeitgeber fordern radikale Aufweichung des Arbeitszeitgesetzes im Sommer',
+            neutral_title: 'Arbeitgeber und Politik diskutieren Lockerung des Achtstundentags und Flexibilisierung der Arbeitszeiten',
+            category: 'Wirtschaft',
+            summary: [
+                'Wirtschaftsverbände fordern eine grundlegende Reform des deutschen Arbeitszeitgesetzes, um wöchentliche statt tägliche Höchstarbeitszeiten zu ermöglichen.',
+                'Gewerkschaften kündigen massiven Widerstand und Proteste für den Sommer an, um den Schutz des Achtstundentags aufrechtzuerhalten.',
+                'Die Debatte spaltet auch die schwarz-rote Regierungskoalition, die nach Wegen sucht, die wirtschaftliche Wettbewerbsfähigkeit zu stärken.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 67
+        },
+        {
+            id: '7',
+            original_title: 'Gewalt gegen palästinensische Bauern: EU beschließt harte Sanktionen gegen vier radikale Siedlerorganisationen',
+            neutral_title: 'EU beschließt Sanktionen gegen vier radikale Siedlerorganisationen im Westjordanland',
+            category: 'Politik',
+            summary: [
+                'Die Europäische Union hat formelle Sanktionen gegen vier Organisationen und drei Einzelpersonen wegen systematischer Angriffe beschlossen.',
+                'Die Bundesregierung unterstützt den Beschluss und betont, dass gewaltsame Vertreibungen eine dauerhafte Friedenslösung blockieren.',
+                'Die Sanktionen umfassen das Einfrieren von Vermögenswerten in Europa sowie weitreichende Einreisesperren.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 53
+        },
+        {
+            id: '8',
+            original_title: 'Große logistische Aktion an der Grenze: Russland und Ukraine tauschen überraschend jeweils 205 Kriegsgefangene aus',
+            neutral_title: 'Ukraine und Russland tauschen jeweils 205 Kriegsgefangene an der Grenze zu Belarus aus',
+            category: 'Ausland',
+            summary: [
+                'Unter internationaler Vermittlung wurde ein größerer Austausch von insgesamt 410 gefangenen Soldaten an der belarussischen Grenze durchgeführt.',
+                'Beide Staaten bestätigten die erfolgreiche Übernahme ihrer Staatsbürger, die nun medizinisch und psychologisch betreut werden.',
+                'Es handelt sich um einen der größten humanitären Austauschaktionen seit Beginn des aktuellen Kalenderjahres.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 47
+        },
+        {
+            id: '9',
+            original_title: 'Schon über 240 Verdachtsfälle registriert: Neuer, bedrohlicher Ebola-Ausbruch in der Demokratischen Republik Kongo gemeldet',
+            neutral_title: 'Weltgesundheitsorganisation registriert 246 Verdachtsfälle bei neuem Ebola-Ausbruch in der DR Kongo',
+            category: 'Gesundheit',
+            summary: [
+                'In den östlichen Provinzen der DR Kongo wurde ein neuer Ausbruch des Ebola-Virus mit über 200 gemeldeten Krankheitsfällen festgestellt.',
+                'Medizinische Teams wurden in die Region entsandt, um Isolationszentren einzurichten und Ringimpfungen im direkten Umfeld zu starten.',
+                'Die WHO stuft das Risiko einer internationalen Ausbreitung aufgrund etablierter lokaler Kontrollmechanismen derzeit als kontrollierbar ein.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 43
+        },
+        {
+            id: '10',
+            original_title: 'Mangelhafter Schutz für Kinder! EU-Kommission droht Facebook-Mutter Meta mit gigantischem Bußgeld wegen Alterskontrollen',
+            neutral_title: 'EU-Kommission droht Meta mit Bußgeldern wegen mangelhafter Alterskontrollen bei Instagram und Facebook',
+            category: 'Digitales',
+            summary: [
+                'Nach vorläufigen Ermittlungen der EU-Kommission verstoßen die Plattformen von Meta gegen den europäischen Digital Services Act (DSA).',
+                'Kritisiert wird insbesondere, dass Kinder und Jugendliche zu leicht Altersbarrieren umgehen können und süchtig machenden Algorithmen ausgesetzt sind.',
+                'Sollte der Tech-Konzern die Kontrollmechanismen nicht zeitnah nachbessern, drohen Strafzahlungen im Milliardenbereich.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 60
         }
     ],
     toggleFavorite(id) {
@@ -64,7 +162,7 @@
         }
     },
     get filteredArticles() {
-        return this.articles.filter(art => art.score >= this.minScore);
+        return this.articles.filter(art => art.score >= this.minScore).sort((a, b) => b.score - a.score);
     }
 }">
 
