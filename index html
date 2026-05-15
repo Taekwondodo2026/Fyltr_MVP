@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FYLTR.news - MVP</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 pb-12 antialiased" x-data="{
+    minScore: 70,
+    showImages: true,
+    useNeutralTitles: true,
+    favorites: [],
+    articles: [
+        {
+            id: '1',
+            original_title: 'Nach Spannungen: Merz betont Einigkeit mit US-Präsident Trump in Iran-Frage – Telefonat auf Rückreise aus China',
+            neutral_title: 'Deutschland und USA stimmen Positionen zu Iran-Konflikt, Ukraine und NATO-Gipfel ab',
+            category: 'Politik',
+            summary: [
+                'Bundeskanzler Merz und US-Präsident Trump fordern die sofortige Wiederöffnung der für den globalen Ölhandel kritischen Straße von Hormus durch den Iran.',
+                'Das Telefonat diente der strategischen Abstimmung für den kommenden NATO-Gipfel in Ankara und potenziellen Friedenslösungen für die Ukraine.',
+                'Neben geopolitischen Themen stehen wirtschaftliche Belastungen durch den Konflikt sowie ein möglicher Abzug von 5.000 US-Soldaten aus Deutschland im Raum.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 57
+        },
+        {
+            id: '2',
+            original_title: 'Gefährlicher Ausbruch auf Kreuzfahrtschiff: WHO bestätigt mindestens acht Infektionen mit hochgradig ansteckendem Andesstamm von Hantavirus',
+            neutral_title: 'WHO bestätigt acht Hantavirus-Infektionen auf quarantänisiertem Expeditionsschiff vor Teneriffa',
+            category: 'Gesundheit',
+            summary: [
+                'Auf einem Kreuzfahrtschiff wurde der von Mensch zu Mensch übertragbare Andesstamm des Hantavirus nachgewiesen; bisher gibt es drei Todesfälle.',
+                'Das betroffene Schiff befindet sich unter Quarantäne vor Teneriffa; internationale Forscher isolieren und sequenzieren den Erreger.',
+                'Die Weltgesundheitsorganisation (WHO) stuft das Risiko für die weltweite Allgemeinbevölkerung aktuell als gering ein.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 23
+        },
+        {
+            id: '3',
+            original_title: 'Pflegeversicherung vor dem Kollaps? Gesundheitsministerin Warken plant drastische Reformen und Kürzungspläne wegen Milliardenloch',
+            neutral_title: 'Gesundheitsministerium plant Leistungskürzungen zur Deckung eines Defizits von 22,5 Milliarden Euro in der Pflegeversicherung',
+            category: 'Soziales',
+            summary: [
+                'Das Defizit der sozialen Pflegeversicherung beläuft sich für 2026/2027 auf insgesamt 22,5 Milliarden Euro, bedingt durch eine Verdopplung der Anspruchsberechtigten seit 2017.',
+                'Das Reformpaket sieht die Rückkehr zu strengeren Einstufungskriterien für die Pflegegrade 1 bis 3 vor, was zukünftige Antragsteller belasten wird.',
+                'Zur Entlastung der rasant steigenden Eigenanteile der Heimbewohner sollen im Gegenzug bürokratische und bauliche Vorgaben für Pflegeheime gesenkt werden.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+            source_url: 'https://www.tagesschau.de',
+            score: 67
+        }
+    ],
+    toggleFavorite(id) {
+        if (this.favorites.includes(id)) {
+            this.favorites = this.favorites.filter(fId => fId !== id);
+        } else {
+            this.favorites.push(id);
+        }
+    },
+    get filteredArticles() {
+        return this.articles.filter(art => art.score >= this.minScore);
+    }
+}">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm">
+        <div class="max-w-2xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <h1 class="text-2xl font-black tracking-tight text-indigo-600">FYLTR<span class="text-gray-400 font-normal">.news</span></h1>
+                <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded font-mono font-bold">HTML MVP</span>
+            </div>
+
+            <div class="space-y-4 bg-gray-50 p-3 rounded-xl border border-gray-100">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1">
+                        <div class="flex justify-between text-xs font-bold text-gray-500 mb-1">
+                            <span>Relevanz-Filter</span>
+                            <span class="text-indigo-600 font-mono">Mind. Score: <span x-text="minScore"></span></span>
+                        </div>
+                        <input 
+                            type="range" 
+                            min="0" 
+                            max="100" 
+                            x-model="minScore"
+                            class="w-full accent-indigo-600 cursor-pointer h-2 bg-gray-200 rounded-lg appearance-none"
+                        />
+                    </div>
+                </div>
+
+                <div class="flex gap-4 pt-1 border-t border-gray-200/60">
+                    <button 
+                        @click="showImages = !showImages"
+                        :class="showImages ? 'bg-white border-gray-300 text-gray-700 shadow-sm' : 'bg-gray-200/50 border-transparent text-gray-400'"
+                        class="text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all"
+                    >
+                        <span x-text="showImages ? 'Bilder an' : 'Bilder aus'"></span>
+                    </button>
+
+                    <button 
+                        @click="useNeutralTitles = !useNeutralTitles"
+                        :class="useNeutralTitles ? 'bg-white border-gray-300 text-gray-700 shadow-sm' : 'bg-gray-200/50 border-transparent text-gray-400'"
+                        class="text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all"
+                    >
+                        <span x-text="useNeutralTitles ? 'Clean Titles' : 'Original Titles'"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-2xl mx-auto px-4 mt-6 space-y-6">
+        <template x-if="filteredArticles.length === 0">
+            <div class="text-center py-12 bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                <p class="text-gray-500 font-medium">Keine Nachrichten erfüllen das gewählte Relevanz-Kriterium.</p>
+                <button @click="minScore = 20" class="text-indigo-600 font-bold text-sm mt-2 hover:underline">Regler senken</button>
+            </div>
+        </template>
+
+        <template x-for="article in filteredArticles" :key="article.id">
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                
+                <div class="relative bg-gray-100">
+                    <template x-if="showImages">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img :src="article.image_url" alt="News Visual" class="w-full h-full object-cover grayscale-[20%] opacity-90" />
+                        </div>
+                    </template>
+                    
+                    <span x-text="article.category" class="absolute top-3 left-3 bg-black/70 backdrop-blur text-white text-[11px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md"></span>
+
+                    <span class="absolute top-3 right-3 bg-indigo-600 text-white font-mono font-black text-xs px-2.5 py-1 rounded-md shadow-md">
+                        Score <span x-text="article.score"></span>
+                    </span>
+                </div>
+
+                <div class="p-5">
+                    <h2 class="text-lg font-bold leading-snug text-gray-900 mb-3" x-text="useNeutralTitles ? article.neutral_title : article.original_title"></h2>
+
+                    <ul class="space-y-2 mb-4">
+                        <template x-for="bullet in article.summary">
+                            <li class="text-sm text-gray-600 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-500 before:font-bold" x-text="bullet"></li>
+                        </template>
+                    </ul>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div class="flex items-center space-x-2">
+                            <button class="p-2 text-gray-400 hover:text-green-600 rounded-lg">👍</button>
+                            <button class="p-2 text-gray-400 hover:text-red-600 rounded-lg">👎</button>
+                            <button @click="toggleFavorite(article.id)" :class="favorites.includes(article.id) ? 'text-rose-600' : 'text-gray-400'" class="p-2 rounded-lg font-bold">
+                                ❤️
+                            </button>
+                        </div>
+
+                        <a :href="article.source_url" target="_blank" class="flex items-center gap-1 text-xs font-bold text-gray-400 hover:text-indigo-600">
+                            <span>Original ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+        </template>
+    </section>
+
+</body>
+</html>
