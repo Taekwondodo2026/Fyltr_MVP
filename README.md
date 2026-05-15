@@ -1,2 +1,2 @@
 # Fyltr_MVP
-all Code for the flute mvp
+all Code for the fyltr mvp
