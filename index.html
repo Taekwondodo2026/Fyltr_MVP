@@ -12,18 +12,16 @@
     focusedMode: false,
     useNeutralTitles: true,
     showFilterDropdown: false,
-    showProfileModal: false,
-    selectedCategory: 'Alle',
-    selectedTimeframe: 'Heute',
+    showProfileDropdown: false,
     location: 'Hamburg, Germany',
     favorites: [],
     
-    // Profil-Präferenzen (nicht direkt verbunden, nur visuell)
+    // Profil-Präferenzen Matrix (Visuelle Slider)
     prefImpact: 7,
     prefSize: 6,
     prefLongevity: 5,
 
-    // Fixierte Bild-URLs und Daten
+    // Alle 10 Artikel vollzählig und einsatzbereit
     articles: [
         {
             id: '1',
@@ -32,7 +30,8 @@
             category: 'Politik',
             summary: [
                 'Bundeskanzler Merz und US-Präsident Trump fordern die sofortige Wiederöffnung der für den globalen Ölhandel kritischen Straße von Hormus durch den Iran.',
-                'Das Telefonat diente der strategischen Abstimmung für den kommenden NATO-Gipfel in Ankara und potenziellen Friedenslösungen für die Ukraine.'
+                'Das Telefonat diente der strategischen Abstimmung für den kommenden NATO-Gipfel in Ankara und potenziellen Friedenslösungen für die Ukraine.',
+                'Neben geopolitischen Themen stehen wirtschaftliche Belastungen durch den Konflikt sowie ein möglicher Abzug von 5.000 US-Soldaten aus Deutschland im Raum.'
             ],
             image_url: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80',
             source_url: '#',
@@ -45,7 +44,8 @@
             category: 'Gesundheit',
             summary: [
                 'Auf einem Kreuzfahrtschiff wurde der von Mensch zu Mensch übertragbare Andesstamm des Hantavirus nachgewiesen; bisher gibt es drei Todesfälle.',
-                'Das betroffene Schiff befindet sich unter Quarantäne vor Teneriffa; internationale Forscher isolieren und sequenzieren den Erreger.'
+                'Das betroffene Schiff befindet sich unter Quarantäne vor Teneriffa; internationale Forscher isolieren und sequenzieren den Erreger.',
+                'Die Weltgesundheitsorganisation (WHO) stuft das Risiko für die weltweite Allgemeinbevölkerung aktuell als gering ein.'
             ],
             image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
             source_url: '#',
@@ -57,7 +57,9 @@
             neutral_title: 'Gesundheitsministerium plant Leistungskürzungen zur Deckung eines Defizits von 22,5 Milliarden Euro in der Pflegeversicherung',
             category: 'Soziales',
             summary: [
-                'Das Defizit der sozialen Pflegeversicherung beläupt sich für 2026/2027 auf insgesamt 22,5 Milliarden Euro, bedingt durch eine Verdopplung der Anspruchsberechtigten seit 2017.'
+                'Das Defizit der sozialen Pflegeversicherung beläuft sich für 2026/2027 auf insgesamt 22,5 Milliarden Euro, bedingt durch eine Verdopplung der Anspruchsberechtigten seit 2017.',
+                'Das Reformpaket sieht die Rückkehr zu strengeren Einstufungskriterien für die Pflegegrade 1 bis 3 vor, was zukünftige Antragsteller belasten wird.',
+                'Zur Entlastung der rasant steigenden Eigenanteile der Heimbewohner sollen im Gegenzug bürokratische und bauliche Vorgaben für Pflegeheime gesenkt werden.'
             ],
             image_url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
             source_url: '#',
@@ -70,21 +72,109 @@
             category: 'Ausland',
             summary: [
                 'Bei einem der schwersten koordinierten Raketen- und Drohnenangriffe der letzten Monate wurden in der ukrainischen Hauptstadt 24 Menschen getötet.',
-                'Der Angriff zielte primär auf die Energie- und Wärmeversorgung der Stadt ab, was zu regionalen Stromausfällen führte.'
+                'Der Angriff zielte primär auf die Energie- und Wärmeversorgung der Stadt ab, was zu regionalen Stromausfällen führte.',
+                'Trotz internationaler Vermittlungsversuche für kurzzeitige Waffenruhen signalisiert der Angriff eine Fortführung der intensiven Luftschläge.'
             ],
             image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
             source_url: '#',
             score: 73
+        },
+        {
+            id: '5',
+            original_title: 'Klare Botschaft an alle Mörder: Israelisches Militär meldet Tötung von Hamas-Führer al-Haddad im Gazastreifen',
+            neutral_title: 'Israelisches Militär vermeldet Tötung eines hochrangigen Hamas-Anführers im Gazastreifen',
+            category: 'Ausland',
+            summary: [
+                'Das israelische Militär hat den hochrangigen Hamas-Kommandeur Iss al-Din al-Haddad bei einer gezielten Militäroperation getötet.',
+                'Al-Haddad wurde von israelischer Seite als einer der strategischen Planer hinter den Angriffen vom 7. Oktober eingestuft.',
+                'Experten erwarten, dass der Vorfall unmittelbare Auswirkungen auf die festgefahrenen Verhandlungen über eine Waffenruhe haben wird.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1534080391025-a7f0e6d87e17?auto=format&fit=crop&w=800&q=80',
+            source_url: '#',
+            score: 70
+        },
+        {
+            id: '6',
+            original_title: 'Der Kampf um den Achtstundentag hat begonnen: Arbeitgeber fordern radikale Aufweichung des Arbeitszeitgesetzes im Sommer',
+            neutral_title: 'Arbeitgeber und Politik diskutieren Lockerung des Achtstundentags und Flexibilisierung der Arbeitszeiten',
+            category: 'Wirtschaft',
+            summary: [
+                'Wirtschaftsverbände fordern eine grundlegende Reform des deutschen Arbeitszeitgesetzes, um wöchentliche statt tägliche Höchstarbeitszeiten zu ermöglichen.',
+                'Gewerkschaften kündigen massiven Widerstand und Proteste für den Sommer an, um den Schutz des Achtstundentags aufrechtzuerhalten.',
+                'Die Debatte spaltet auch die schwarz-rote Regierungskoalition, die nach Wegen sucht, die wirtschaftliche Wettbewerbsfähigkeit zu stärken.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+            source_url: '#',
+            score: 67
+        },
+        {
+            id: '7',
+            original_title: 'Gewalt gegen palästinensische Bauern: EU beschließt harte Sanktionen gegen vier radikale Siedlerorganisationen',
+            neutral_title: 'EU beschließt Sanktionen gegen vier radikale Siedlerorganisationen im Westjordanland',
+            category: 'Politik',
+            summary: [
+                'Die Europäische Union hat formelle Sanktionen gegen vier Organisationen und drei Einzelpersonen wegen systematischer Angriffe beschlossen.',
+                'Die Bundesregierung unterstützt den Beschluss und betont, dass gewaltsame Vertreibungen eine dauerhafte Friedenslösung blockieren.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+            source_url: '#',
+            score: 53
+        },
+        {
+            id: '8',
+            original_title: 'Große logistische Aktion an der Grenze: Russland und Ukraine tauschen überraschend jeweils 205 Kriegsgefangene aus',
+            neutral_title: 'Ukraine und Russland tauschen jeweils 205 Kriegsgefangene an der Grenze zu Belarus aus',
+            category: 'Ausland',
+            summary: [
+                'Unter internationaler Vermittlung wurde ein maioritätlicher Austausch von insgesamt 410 gefangenen Soldaten an der belarussischen Grenze durchgeführt.',
+                'Beide Staaten bestätigten die erfolgreiche Übernahme ihrer Staatsbürger, die nun medizinisch betreut werden.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+            source_url: '#',
+            score: 47
+        },
+        {
+            id: '9',
+            original_title: 'Schon über 240 Verdachtsfälle registriert: Neuer, bedrohlicher Ebola-Ausbruch in der Demokratischen Republik Kongo gemeldet',
+            neutral_title: 'Weltgesundheitsorganisation registriert 246 Verdachtsfälle bei neuem Ebola-Ausbruch in der DR Kongo',
+            category: 'Gesundheit',
+            summary: [
+                'In den östlichen Provinzen der DR Kongo wurde ein neuer Ausbruch des Ebola-Virus mit über 200 gemeldeten Krankheitsfällen festgestellt.',
+                'Die WHO stuft das Risiko einer internationalen Ausbreitung aufgrund etablierter lokaler Kontrollmechanismen derzeit als kontrollierbar ein.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80',
+            source_url: '#',
+            score: 43
+        },
+        {
+            id: '10',
+            original_title: 'Mangelhafter Schutz für Kinder! EU-Kommission droht Facebook-Mutter Meta mit gigantischem Bußgeld wegen Alterskontrollen',
+            neutral_title: 'EU-Kommission droht Meta mit Bußgeldern wegen mangelhafter Alterskontrollen bei Instagram und Facebook',
+            category: 'Digitales',
+            summary: [
+                'Nach vorläufigen Ermittlungen der EU-Kommission verstoßen die Plattformen von Meta gegen den europäischen Digital Services Act (DSA).',
+                'Kritisiert wird insbesondere, dass Kinder und Jugendliche zu leicht Altersbarrieren umgehen können.'
+            ],
+            image_url: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80',
+            source_url: '#',
+            score: 60
         }
     ],
 
-    // Logik für Dropdown und Slider
     resetFilters() {
         this.minScore = 50;
         this.selectedCategory = 'Alle';
         this.useNeutralTitles = true;
         this.focusedMode = false;
         this.showFilterDropdown = false;
+    },
+
+    resetProfile() {
+        this.prefImpact = 7;
+        this.prefSize = 6;
+        this.prefLongevity = 5;
+        this.location = 'Hamburg, Germany';
+        this.showProfileDropdown = false;
     },
     
     toggleFavorite(id) {
@@ -109,191 +199,129 @@
     <header class="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-xs">
         <div class="max-w-xl mx-auto px-4 py-2.5 flex items-center justify-between relative">
             
-            <div class="w-10"></div> 
+            <button @click="showFilterDropdown = !showFilterDropdown; showProfileDropdown = false" class="w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-gray-100 transition-colors cursor-pointer select-none">
+                🔍
+            </button>
 
             <div class="absolute left-1/2 -translate-x-1/2 text-center">
                 <a href="#" class="text-2xl font-black tracking-tighter text-blue-600">FYLTR</a>
             </div>
 
-            <button @click="showProfileModal = true" class="w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-gray-100 transition-colors">
+            <button @click="showProfileDropdown = !showProfileDropdown; showFilterDropdown = false" class="w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-gray-100 transition-colors cursor-pointer select-none">
                 👤
             </button>
         </div>
-    </header>
 
-    <div class="max-w-xl mx-auto px-4 mt-3 flex items-center justify-between">
-        <button @click="showFilterDropdown = !showFilterDropdown" class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 hover:bg-gray-200 transition-all border border-gray-200/60 shadow-xs">
-            🔍 Filter <span class="text-[10px] opacity-60" x-text="showFilterDropdown ? '▲' : '▼'"></span>
-        </button>
-        
-        <div class="bg-gray-100/80 backdrop-blur-xs px-3 py-1 rounded-full border border-gray-200/60 shadow-xs text-[11px] font-bold text-gray-500">
-            Visible: <span class="text-blue-600 font-mono" x-text="filteredArticles.length"></span> / <span x-text="articles.length"></span> Articles
-        </div>
-    </div>
-
-    <div x-show="showFilterDropdown" x-transition class="max-w-xl mx-auto px-4 mt-2">
-        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 shadow-lg space-y-4">
-            
-            <div>
-                <div class="flex justify-between text-[11px] font-black text-gray-400 uppercase mb-2">
-                    <span>Relevanz-Filter</span>
-                    <span class="text-blue-600 font-mono text-sm" x-text="minScore"></span>
-                </div>
-                <input type="range" min="0" max="100" x-model="minScore" class="w-full accent-blue-600 cursor-pointer h-2 bg-gray-100 rounded-lg appearance-none">
-            </div>
-
-            <div>
-                <label class="block text-[11px] font-black text-gray-400 uppercase mb-2 leading-none">Category</label>
-                <select x-model="selectedCategory" class="w-full bg-white border border-gray-200 rounded-xl text-xs p-3 font-bold focus:outline-hidden">
-                    <option value="Alle">All Topics</option>
-                    <option value="Politik">Politik</option>
-                    <option value="Ausland">Ausland</option>
-                    <option value="Wirtschaft">Wirtschaft</option>
-                    <option value="Gesundheit">Gesundheit</option>
-                    <option value="Soziales">Soziales</option>
-                    <option value="Digitales">Digitales</option>
-                </select>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3 pt-3 border-t border-gray-100">
-                <button @click="useNeutralTitles = !useNeutralTitles" :class="useNeutralTitles ? 'bg-blue-600 text-white border-transparent' : 'bg-white border-gray-200 text-gray-500'" class="text-[11px] font-bold py-2.5 rounded-xl border text-center transition-all">
-                    Clean Titles Mode
-                </button>
-                <button @click="focusedMode = !focusedMode" :class="focusedMode ? 'bg-blue-600 text-white border-transparent' : 'bg-white border-gray-200 text-gray-500'" class="text-[11px] font-bold py-2.5 rounded-xl border text-center transition-all">
-                    Fokus-Modus
-                </button>
-            </div>
-
-            <button @click="resetFilters" class="w-full bg-gray-200 text-gray-700 font-bold py-2 rounded-xl mt-3 text-xs">
-                Reset Filters
-            </button>
-        </div>
-    </div>
-
-    <main class="max-w-xl mx-auto px-4 mt-5 space-y-5">
-        <template x-if="filteredArticles.length === 0">
-            <div class="text-center py-12 bg-white rounded-2xl border border-gray-200 p-6 shadow-xs">
-                <p class="text-gray-500 font-medium text-sm">Keine Nachrichten erfüllen das gewählte Relevanz-Kriterium.</p>
-                <button @click="resetFilters" class="text-blue-600 font-bold text-xs mt-2 hover:underline">Filter zurücksetzen</button>
-            </div>
-        </template>
-
-        <template x-for="article in filteredArticles" :key="article.id">
-            <article class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xs transition-all">
-                
-                <template x-if="!focusedMode">
-                    <div>
-                        <div class="h-44 w-full overflow-hidden bg-gray-100 relative">
-                            <img :src="article.image_url" alt="News Image" class="w-full h-full object-cover" />
-                            <span x-text="article.category" class="absolute top-4 left-4 bg-black/80 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded"></span>
-                            <span class="absolute top-4 right-4 bg-blue-600 text-white font-mono font-black text-xs px-2 py-0.5 rounded">
-                                Score <span x-text="article.score"></span>
-                            </span>
-                        </div>
-                        <div class="p-5">
-                            <h2 class="text-lg font-bold leading-tight text-gray-900 mb-3" x-text="useNeutralTitles ? article.neutral_title : article.original_title"></h2>
-                            <ul class="space-y-1.5 mb-3">
-                                <template x-for="bullet in article.summary">
-                                    <li class="text-sm text-gray-600 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-blue-500font-bold" x-text="bullet"></li>
-                                </template>
-                            </ul>
-                        </div>
-                    </div>
-                </template>
-
-                <template x-if="focusedMode">
-                    <div class="p-4 flex flex-col space-y-2.5">
-                        <div class="flex justify-between items-center text-[10px] font-black uppercase text-gray-400">
-                            <span x-text="article.category" class="text-blue-600"></span>
-                            <span>Score <span x-text="article.score"></span></span>
-                        </div>
-                        <h2 class="text-base font-bold leading-snug" x-text="useNeutralTitles ? article.neutral_title : article.original_title"></h2>
-                    </div>
-                </template>
-
-                <div class="px-5 pb-3 pt-2 bg-gray-50/50 flex items-center justify-between border-t border-gray-100">
-                    <div class="flex items-center space-x-5">
-                        <button class="text-lg opacity-40 hover:opacity-100">👍</button>
-                        <button class="text-lg opacity-40 hover:opacity-100">👎</button>
-                        <button @click="toggleFavorite(article.id)" :class="favorites.includes(article.id) ? 'text-red-500 opacity-100' : 'text-gray-300 opacity-100'" class="text-lg transition-all">❤️</button>
-                    </div>
-                    <a :href="article.source_url" target="_blank" class="text-gray-300 hover:text-blue-600 transition-colors">
-                        <span class="text-xl">🔗</span>
-                    </a>
-                </div>
-            </article>
-        </template>
-    </main>
-
-    <footer class="max-w-xl mx-auto px-4 mt-12 text-center text-xs text-gray-400 font-medium space-y-1">
-        <p>You've caught up with everything.</p>
-        <p class="text-[10px] opacity-70">Last updated: Just now</p>
-    </footer>
-
-    <div x-show="showProfileModal" class="fixed inset-0 z-50 overflow-hidden" style="display: none;">
-        <div class="absolute inset-0 bg-black/30 backdrop-blur-xs" @click="showProfileModal = false"></div>
-        <div class="absolute inset-y-0 right-0 max-w-full flex">
-            <div class="w-screen max-w-xs bg-white p-6 shadow-xl flex flex-col h-full justify-between overflow-y-auto" x-transition:enter="transition transform duration-200" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0">
-                
+        <div x-show="showFilterDropdown" x-transition class="bg-white border-t border-b border-gray-100 shadow-md" style="display: none;">
+            <div class="max-w-xl mx-auto px-4 py-4 space-y-4">
                 <div>
-                    <div class="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
-                        <h2 class="text-xl font-black">Personalization</h2>
-                        <button @click="showProfileModal = false" class="text-2xl font-bold p-1 leading-none">✕</button>
+                    <div class="flex justify-between text-[11px] font-black text-gray-400 uppercase mb-2">
+                        <span>Mindest-Relevanz (Score)</span>
+                        <span class="text-blue-600 font-mono text-sm" x-text="minScore"></span>
                     </div>
+                    <input type="range" min="0" max="100" x-model="minScore" class="w-full accent-blue-600 cursor-pointer h-2 bg-gray-100 rounded-lg appearance-none">
+                </div>
 
-                    <div class="bg-blue-50/80 p-4 rounded-2xl mb-6">
-                        <h3 class="text-[11px] font-black text-blue-700 uppercase mb-1.5">Our Mission</h3>
-                        <p class="text-xs text-blue-900 leading-relaxed font-bold">
-                            Fyltr puts you back in control of your news feed. No sensationalism, no noise—just pure facts algorithmically structured and ranked based on what truly matters to you. Relevance over hype.
-                        </p>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-black text-gray-400 uppercase mb-1.5">Thema</label>
+                        <select x-model="selectedCategory" class="w-full bg-gray-50 border border-gray-200 rounded-xl text-xs p-2.5 font-bold focus:outline-hidden">
+                            <option value="Alle">Alle Themen</option>
+                            <option value="Politik">Politik</option>
+                            <option value="Ausland">Ausland</option>
+                            <option value="Wirtschaft">Wirtschaft</option>
+                            <option value="Gesundheit">Gesundheit</option>
+                            <option value="Soziales">Soziales</option>
+                            <option value="Digitales">Digitales</option>
+                        </select>
                     </div>
-
-                    <div class="mb-6 pb-6 border-b border-gray-100">
-                        <label class="block text-[11px] font-black text-gray-400 uppercase tracking-wide mb-1.5 leading-none">Your Location</label>
-                        <input type="text" x-model="location" class="w-full bg-gray-50 border border-gray-200 rounded-lg text-xs p-3 font-bold focus:outline-hidden focus:border-blue-600">
-                    </div>
-
-                    <div class="space-y-6">
-                        <label class="block text-[11px] font-black text-gray-400 uppercase tracking-wide">Matrix Weighting</label>
-                        
-                        <div>
-                            <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600">
-                                <span>Impact (Severity)</span>
-                                <span class="font-bold text-blue-600 font-mono" x-text="prefImpact"></span>
-                            </div>
-                            <input type="range" min="1" max="10" x-model="prefImpact" class="w-full accent-blue-600 h-1.5 bg-gray-100 rounded-lg appearance-none">
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600">
-                                <span>Reach (Audience size)</span>
-                                <span class="font-bold text-blue-600 font-mono" x-text="prefSize"></span>
-                            </div>
-                            <input type="range" min="1" max="10" x-model="prefSize" class="w-full accent-blue-600 h-1.5 bg-gray-100 rounded-lg appearance-none">
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600">
-                                <span>Longevity (Timeframe)</span>
-                                <span class="font-bold text-blue-600 font-mono" x-text="prefLongevity"></span>
-                            </div>
-                            <input type="range" min="1" max="10" x-model="prefLongevity" class="w-full accent-blue-600 h-1.5 bg-gray-100 rounded-lg appearance-none">
-                        </div>
+                    <div>
+                        <label class="block text-[11px] font-black text-gray-400 uppercase mb-1.5">Zeitraum</label>
+                        <select x-model="selectedTimeframe" class="w-full bg-gray-50 border border-gray-200 rounded-xl text-xs p-2.5 font-bold focus:outline-hidden">
+                            <option value="Heute">Letzte 24h</option>
+                            <option value="Woche">Woche</option>
+                            <option value="Monat">Monat</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="pt-6 border-t border-gray-100 mt-8 space-y-3">
-                    <button @click="prefImpact = 7; prefSize = 6; prefLongevity = 5; showProfileModal = false" class="w-full bg-gray-100 text-gray-700 text-xs font-bold py-2 rounded-xl">
+                <div class="grid grid-cols-2 gap-3 pt-2 border-t border-gray-100">
+                    <button @click="useNeutralTitles = !useNeutralTitles" :class="useNeutralTitles ? 'bg-blue-600 text-white border-transparent' : 'bg-white border-gray-200 text-gray-500'" class="text-[11px] font-bold py-2 rounded-xl border text-center transition-all cursor-pointer">
+                        Clean Titles
+                    </button>
+                    <button @click="focusedMode = !focusedMode" :class="focusedMode ? 'bg-blue-600 text-white border-transparent' : 'bg-white border-gray-200 text-gray-500'" class="text-[11px] font-bold py-2 rounded-xl border text-center transition-all cursor-pointer">
+                        Fokus-Modus
+                    </button>
+                </div>
+
+                <button @click="resetFilters" class="w-full bg-gray-100 text-gray-600 font-bold py-2 rounded-xl text-xs hover:bg-gray-200 transition-colors cursor-pointer">
+                    Reset Filters
+                </button>
+            </div>
+        </div>
+
+        <div x-show="showProfileDropdown" x-transition class="bg-white border-t border-b border-gray-100 shadow-md" style="display: none;">
+            <div class="max-w-xl mx-auto px-4 py-5 space-y-5">
+                
+                <div class="bg-blue-50/80 p-4 rounded-2xl">
+                    <h3 class="text-[11px] font-black text-blue-700 uppercase mb-1.5">Our Mission</h3>
+                    <p class="text-xs text-blue-900 leading-relaxed font-bold">
+                        Fyltr puts you back in control of your news feed. No sensationalism, no noise—just pure facts algorithmically structured and ranked based on what truly matters to you. Relevance over hype.
+                    </p>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-black text-gray-400 uppercase tracking-wide mb-1.5 leading-none">Your Location</label>
+                    <input type="text" x-model="location" class="w-full bg-gray-50 border border-gray-200 rounded-lg text-xs p-2.5 font-bold focus:outline-hidden focus:border-blue-600">
+                </div>
+
+                <div class="space-y-4 pt-2 border-t border-gray-100">
+                    <label class="block text-[11px] font-black text-gray-400 uppercase tracking-wide">Matrix Weighting</label>
+                    
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1 text-gray-600">
+                            <span>Impact (Severity)</span>
+                            <span class="font-bold text-blue-600 font-mono" x-text="prefImpact"></span>
+                        </div>
+                        <input type="range" min="1" max="10" x-model="prefImpact" class="w-full accent-blue-600 h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1 text-gray-600">
+                            <span>Reach (Audience size)</span>
+                            <span class="font-bold text-blue-600 font-mono" x-text="prefSize"></span>
+                        </div>
+                        <input type="range" min="1" max="10" x-model="prefSize" class="w-full accent-blue-600 h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1 text-gray-600">
+                            <span>Longevity (Timeframe)</span>
+                            <span class="font-bold text-blue-600 font-mono" x-text="prefLongevity"></span>
+                        </div>
+                        <input type="range" min="1" max="10" x-model="prefLongevity" class="w-full accent-blue-600 h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-gray-100">
+                    <button @click="resetProfile" class="bg-gray-100 text-gray-600 font-bold py-2.5 rounded-xl text-xs hover:bg-gray-200 transition-all cursor-pointer text-center">
                         Reset Filters
                     </button>
-                    <button @click="showProfileModal = false" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg shadow-blue-100">
+                    <button @click="showProfileDropdown = false" class="bg-blue-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-md shadow-blue-100 transition-all cursor-pointer text-center">
                         Save Preferences
                     </button>
                 </div>
-
             </div>
+        </div>
+    </header>
+
+    <div class="max-w-xl mx-auto px-4 mt-4 flex justify-center">
+        <div class="bg-gray-100/80 backdrop-blur-xs px-4 py-1.5 rounded-full border border-gray-200/60 shadow-xs text-xs font-bold text-gray-600">
+            <span class="text-blue-600 font-mono" x-text="filteredArticles.length"></span> / <span x-text="articles.length" class="text-gray-400 font-mono"></span> articles visible
         </div>
     </div>
 
-</body>
-</html>
+    <main class="max-w-xl mx-auto px-4 mt-4 space-y-5">
+        <template x-if="filteredArticles.length === 0">
+            <div class="text-center py-12 bg-white rounded-2xl border border-gray-200 p-6 shadow-xs">
+                <p class="text-gray-500 font-medium tex
